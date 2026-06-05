@@ -1,0 +1,5 @@
+# Copy to terraform.tfvars and fill in.
+aws_region   = "eu-central-1"
+environment  = "dev"
+name_prefix  = "cloudops-portfolio-dev"
+alarm_email  = ""
