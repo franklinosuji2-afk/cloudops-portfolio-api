@@ -531,5 +531,5 @@ AWS | Terraform | Serverless | CI/CD | DevOps | Platform Engineering
 
 # 📄 License
 
-Licensed under the **MIT License**.
+Licensed under the **MIT License**
 
