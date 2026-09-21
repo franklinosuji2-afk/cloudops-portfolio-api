@@ -1,4 +1,4 @@
-# ☁️ CloudOps Portfolio API
+﻿# â˜ï¸ CloudOps Portfolio API
 
 > **A production-style serverless REST API built on AWS using Infrastructure as Code.**
 
@@ -16,7 +16,7 @@ The entire stack can run locally using LocalStack, enabling realistic AWS develo
 
 ---
 
-# 🚀 Project Overview
+# ðŸš€ Project Overview
 
 Modern cloud-native APIs should be:
 
@@ -33,50 +33,50 @@ Rather than relying on traditional servers or container clusters, this project u
 
 That means:
 
-✅ No always-on servers
-✅ No load balancers
-✅ No NAT gateways
-✅ No VPC management
-✅ Near-zero baseline cost
+âœ… No always-on servers
+âœ… No load balancers
+âœ… No NAT gateways
+âœ… No VPC management
+âœ… Near-zero baseline cost
 
 ---
 
-# 🎯 What This Project Demonstrates
+# ðŸŽ¯ What This Project Demonstrates
 
 This repository showcases practical experience in:
 
-✅ Serverless architecture design
-✅ Infrastructure as Code (IaC)
-✅ AWS resource provisioning with Terraform
-✅ CI/CD pipeline automation
-✅ Monitoring & alerting
-✅ REST API design
-✅ Automated testing
-✅ Cost-aware cloud architecture
+âœ… Serverless architecture design
+âœ… Infrastructure as Code (IaC)
+âœ… AWS resource provisioning with Terraform
+âœ… CI/CD pipeline automation
+âœ… Monitoring & alerting
+âœ… REST API design
+âœ… Automated testing
+âœ… Cost-aware cloud architecture
 
 ---
 
-# 🏗 Architecture
+# ðŸ— Architecture
 
 ```text id="rch6i0"
 Client
-  │
-  ▼
+  â”‚
+  â–¼
 API Gateway (HTTP API)
-  │
-  ├── GET    /projects
-  ├── POST   /projects
-  ├── GET    /projects/{id}
-  ├── PUT    /projects/{id}
-  └── DELETE /projects/{id}
-  │
-  ▼
+  â”‚
+  â”œâ”€â”€ GET    /projects
+  â”œâ”€â”€ POST   /projects
+  â”œâ”€â”€ GET    /projects/{id}
+  â”œâ”€â”€ PUT    /projects/{id}
+  â””â”€â”€ DELETE /projects/{id}
+  â”‚
+  â–¼
 AWS Lambda Functions
-  │
-  ▼
+  â”‚
+  â–¼
 DynamoDB
-  │
-  ▼
+  â”‚
+  â–¼
 CloudWatch Logs & Monitoring
 ```
 
@@ -94,7 +94,7 @@ All compute is fully event-driven.
 
 ---
 
-# ⚙️ Technology Stack
+# âš™ï¸ Technology Stack
 
 | Layer             | Technology                                                                   |
 | ----------------- | ---------------------------------------------------------------------------- |
@@ -110,7 +110,7 @@ All compute is fully event-driven.
 
 ---
 
-# ✨ Features
+# âœ¨ Features
 
 ---
 
@@ -162,44 +162,44 @@ Includes:
 
 ---
 
-# 📁 Repository Structure
+# ðŸ“ Repository Structure
 
 ```bash id="xtd40x"
 cloudops-portfolio-api/
-│
-├── .github/workflows/
-│   ├── ci.yml
-│   └── deploy.yml
-│
-├── docs/
-│   ├── api-spec.md
-│   ├── cost-notes.md
-│   └── runbook.md
-│
-├── infra/
-│   ├── modules/
-│   │   ├── apigateway/
-│   │   ├── dynamodb/
-│   │   ├── iam/
-│   │   ├── lambda/
-│   │   └── monitoring/
-│   │
-│   └── envs/
-│       ├── dev/
-│       └── prod/
-│
-├── src/
-│   ├── handlers/
-│   └── utils/
-│
-├── tests/
-│
-└── README.md
+â”‚
+â”œâ”€â”€ .github/workflows/
+â”‚   â”œâ”€â”€ ci.yml
+â”‚   â””â”€â”€ deploy.yml
+â”‚
+â”œâ”€â”€ docs/
+â”‚   â”œâ”€â”€ api-spec.md
+â”‚   â”œâ”€â”€ cost-notes.md
+â”‚   â””â”€â”€ runbook.md
+â”‚
+â”œâ”€â”€ infra/
+â”‚   â”œâ”€â”€ modules/
+â”‚   â”‚   â”œâ”€â”€ apigateway/
+â”‚   â”‚   â”œâ”€â”€ dynamodb/
+â”‚   â”‚   â”œâ”€â”€ iam/
+â”‚   â”‚   â”œâ”€â”€ lambda/
+â”‚   â”‚   â””â”€â”€ monitoring/
+â”‚   â”‚
+â”‚   â””â”€â”€ envs/
+â”‚       â”œâ”€â”€ dev/
+â”‚       â””â”€â”€ prod/
+â”‚
+â”œâ”€â”€ src/
+â”‚   â”œâ”€â”€ handlers/
+â”‚   â””â”€â”€ utils/
+â”‚
+â”œâ”€â”€ tests/
+â”‚
+â””â”€â”€ README.md
 ```
 
 ---
 
-# 🚀 API Endpoints
+# ðŸš€ API Endpoints
 
 | Method | Endpoint         | Description    |
 | ------ | ---------------- | -------------- |
@@ -211,7 +211,7 @@ cloudops-portfolio-api/
 
 ---
 
-# 📦 Project Schema
+# ðŸ“¦ Project Schema
 
 ```json
 {
@@ -226,7 +226,7 @@ cloudops-portfolio-api/
 
 ---
 
-# 🧪 Example Request
+# ðŸ§ª Example Request
 
 ## Create Project
 
@@ -251,7 +251,7 @@ Response:
 
 ---
 
-# 🛠 Local Development
+# ðŸ›  Local Development
 
 ---
 
@@ -309,7 +309,7 @@ terraform apply
 
 ---
 
-# 🔄 CI/CD Pipeline
+# ðŸ”„ CI/CD Pipeline
 
 Two workflows automate delivery.
 
@@ -344,7 +344,7 @@ Stages:
 
 ---
 
-# 🏗 Terraform Infrastructure
+# ðŸ— Terraform Infrastructure
 
 Infrastructure is modularized into reusable components.
 
@@ -358,7 +358,7 @@ Infrastructure is modularized into reusable components.
 
 ---
 
-# 📈 Monitoring & Observability
+# ðŸ“ˆ Monitoring & Observability
 
 CloudWatch monitors:
 
@@ -383,7 +383,7 @@ Alerts trigger when:
 
 ---
 
-# 🔐 Security
+# ðŸ” Security
 
 Security best practices include:
 
@@ -421,7 +421,7 @@ No VPC means avoiding:
 
 ---
 
-# 💰 Cost Analysis
+# ðŸ’° Cost Analysis
 
 Designed for AWS Free Tier usage.
 
@@ -432,13 +432,13 @@ Designed for AWS Free Tier usage.
 | DynamoDB    | 25 GB storage     |
 | CloudWatch  | 5 GB logs         |
 
-Expected portfolio traffic cost:
+Expected portfolio cost:`r`n`r`nFor local development with LocalStack: **Expected portfolio traffic cost:
 
-# **$0/month**
+# **$0/month**/month**.`r`n`r`nAWS usage is dependent on actual request volume and applicable AWS pricing/free-tier eligibility.
 
 ---
 
-# 🧪 Testing
+# ðŸ§ª Testing
 
 The project includes comprehensive automated testing.
 
@@ -460,7 +460,7 @@ No AWS account required.
 
 ---
 
-# 📚 Documentation
+# ðŸ“š Documentation
 
 Additional docs included:
 
@@ -476,7 +476,7 @@ docs/
 
 ---
 
-# 🔮 Future Improvements
+# ðŸ”® Future Improvements
 
 Planned enhancements:
 
@@ -490,7 +490,7 @@ Planned enhancements:
 
 ---
 
-# 💡 Why This Project Matters
+# ðŸ’¡ Why This Project Matters
 
 Many portfolios show cloud deployment.
 
@@ -508,13 +508,13 @@ This is the mindset expected from modern **Cloud Engineers**, **DevOps Engineers
 
 ---
 
-# 🤝 Contributing
+# ðŸ¤ Contributing
 
 Contributions, issues, and pull requests are welcome.
 
 ---
 
-# 👨‍💻 Author
+# ðŸ‘¨â€ðŸ’» Author
 
 ## Franklin Chinonso Osuji
 
@@ -529,7 +529,8 @@ AWS | Terraform | Serverless | CI/CD | DevOps | Platform Engineering
 
 ---
 
-# 📄 License
+# ðŸ“„ License
 
 Licensed under the **MIT License**
+
 
