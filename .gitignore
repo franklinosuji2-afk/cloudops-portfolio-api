@@ -8,3 +8,10 @@ __pycache__/
 venv/
 .idea/
 .vscode/
+# Test and coverage artifacts
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.pytest_cache/
+*.py[cod]
