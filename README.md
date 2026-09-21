@@ -64,11 +64,11 @@ Client
   â–¼
 API Gateway (HTTP API)
   │
-  â”œâ”€â”€ GET    /projects
-  â”œâ”€â”€ POST   /projects
-  â”œâ”€â”€ GET    /projects/{id}
-  â”œâ”€â”€ PUT    /projects/{id}
-  â””â”€â”€ DELETE /projects/{id}
+   GET    /projects
+   POST   /projects
+   GET    /projects/{id}
+   PUT    /projects/{id}
+   DELETE /projects/{id}
   │
   â–¼
 AWS Lambda Functions
@@ -162,39 +162,39 @@ Includes:
 
 ---
 
-# ðŸ“ Repository Structure
+#  Repository Structure
 
 ```bash id="xtd40x"
 cloudops-portfolio-api/
 │
-â”œâ”€â”€ .github/workflows/
-│   â”œâ”€â”€ ci.yml
-│   â””â”€â”€ deploy.yml
+ .github/workflows/
+│    ci.yml
+│    ci.yml
 │
-â”œâ”€â”€ docs/
-│   â”œâ”€â”€ api-spec.md
-│   â”œâ”€â”€ cost-notes.md
-│   â””â”€â”€ runbook.md
+ docs/
+│    api-spec.md
+│    cost-notes.md
+│    runbook.md
 │
-â”œâ”€â”€ infra/
-│   â”œâ”€â”€ modules/
-│   │   â”œâ”€â”€ apigateway/
-│   │   â”œâ”€â”€ dynamodb/
-│   │   â”œâ”€â”€ iam/
-│   │   â”œâ”€â”€ lambda/
-│   │   â””â”€â”€ monitoring/
+ infra/
+│    modules/
+│   │    apigateway/
+│   │    dynamodb/
+│   │    iam/
+│   │    lambda/
+│   │    monitoring/
 │   │
-│   â””â”€â”€ envs/
-│       â”œâ”€â”€ dev/
-│       â””â”€â”€ prod/
+│    envs/
+│        dev/
+│        prod/
 │
-â”œâ”€â”€ src/
-│   â”œâ”€â”€ handlers/
-│   â””â”€â”€ utils/
+ src/
+│    handlers/
+│    utils/
 │
-â”œâ”€â”€ tests/
+ tests/
 │
-â””â”€â”€ README.md
+ README.md
 ```
 
 ---
@@ -211,7 +211,7 @@ cloudops-portfolio-api/
 
 ---
 
-# ðŸ“¦ Project Schema
+#  Project Schema
 
 ```json
 {
@@ -251,7 +251,7 @@ Response:
 
 ---
 
-# ðŸ›  Local Development
+#  Local Development
 
 ---
 
@@ -309,7 +309,7 @@ terraform apply
 
 ---
 
-# ðŸ”„ CI/CD Pipeline
+#  CI/CD Pipeline
 
 Two workflows automate delivery.
 
@@ -330,7 +330,7 @@ Stages:
 
 ---
 
-## Deployment Pipeline (`deploy.yml`)
+## Deployment Pipeline (`ci.yml`)
 
 Runs on merge to main.
 
@@ -358,7 +358,7 @@ Infrastructure is modularized into reusable components.
 
 ---
 
-# ðŸ“ˆ Monitoring & Observability
+#  Monitoring & Observability
 
 CloudWatch monitors:
 
@@ -383,7 +383,7 @@ Alerts trigger when:
 
 ---
 
-# ðŸ” Security
+#  Security
 
 Security best practices include:
 
@@ -421,7 +421,7 @@ No VPC means avoiding:
 
 ---
 
-# ðŸ’° Cost Analysis
+#  Cost Analysis
 
 Designed for AWS Free Tier usage.
 
@@ -464,7 +464,7 @@ No AWS account required.
 
 ---
 
-# ðŸ“š Documentation
+#  Documentation
 
 Additional docs included:
 
@@ -480,7 +480,7 @@ docs/
 
 ---
 
-# ðŸ”® Future Improvements
+#  Future Improvements
 
 Planned enhancements:
 
@@ -494,7 +494,7 @@ Planned enhancements:
 
 ---
 
-# ðŸ’¡ Why This Project Matters
+#  Why This Project Matters
 
 Many portfolios show cloud deployment.
 
@@ -533,8 +533,6 @@ AWS | Terraform | Serverless | CI/CD | DevOps | Platform Engineering
 
 ---
 
-# ðŸ“„ License
+#  License
 
 Licensed under the **MIT License**
-
-
