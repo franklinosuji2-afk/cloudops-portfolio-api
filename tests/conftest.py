@@ -1,11 +1,11 @@
-import os
+﻿import os
 import sys
+
 import boto3
+import pytest
 from moto import mock_aws
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
-
-import pytest
 
 TABLE_NAME = "test-projects"
 
@@ -32,6 +32,7 @@ def dynamodb_table():
         )
         table.meta.client.get_waiter("table_exists").wait(TableName=TABLE_NAME)
         import utils.dynamodb as ddb_module
+
         ddb_module._dynamodb = None
         yield table
         ddb_module._dynamodb = None
@@ -41,6 +42,7 @@ def dynamodb_table():
 def sample_project(dynamodb_table):
     from datetime import datetime, timezone
     import uuid
+
     project = {
         "id": str(uuid.uuid4()),
         "name": "Test Project",
