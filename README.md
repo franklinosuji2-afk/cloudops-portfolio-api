@@ -1,4 +1,4 @@
-﻿# â˜ï¸ CloudOps Portfolio API
+﻿CloudOps Portfolio API
 
 > **A production-style serverless REST API built on AWS using Infrastructure as Code.**
 
