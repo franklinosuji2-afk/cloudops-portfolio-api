@@ -1,4 +1,4 @@
-﻿CloudOps Portfolio API
+CloudOps Portfolio API
 
 > **A production-style serverless REST API built on AWS using Infrastructure as Code.**
 
@@ -16,7 +16,7 @@ The entire stack can run locally using LocalStack, enabling realistic AWS develo
 
 ---
 
-# ðŸš€ Project Overview
+# 🚀 Project Overview
 
 Modern cloud-native APIs should be:
 
@@ -33,49 +33,49 @@ Rather than relying on traditional servers or container clusters, this project u
 
 That means:
 
-âœ… No always-on servers
-âœ… No load balancers
-âœ… No NAT gateways
-âœ… No VPC management
-âœ… Near-zero baseline cost
+✅ No always-on servers
+✅ No load balancers
+✅ No NAT gateways
+✅ No VPC management
+✅ Near-zero baseline cost
 
 ---
 
-# ðŸŽ¯ What This Project Demonstrates
+# 🎯 What This Project Demonstrates
 
 This repository showcases practical experience in:
 
-âœ… Serverless architecture design
-âœ… Infrastructure as Code (IaC)
-âœ… AWS resource provisioning with Terraform
-âœ… CI/CD pipeline automation
-âœ… Monitoring & alerting
-âœ… REST API design
-âœ… Automated testing
-âœ… Cost-aware cloud architecture
+✅ Serverless architecture design
+✅ Infrastructure as Code (IaC)
+✅ AWS resource provisioning with Terraform
+✅ CI/CD pipeline automation
+✅ Monitoring & alerting
+✅ REST API design
+✅ Automated testing
+✅ Cost-aware cloud architecture
 
 ---
 
-# ðŸ— Architecture
+# 🏗 Architecture
 
 ```text id="rch6i0"
 Client
-  â”‚
+  │
   â–¼
 API Gateway (HTTP API)
-  â”‚
+  │
   â”œâ”€â”€ GET    /projects
   â”œâ”€â”€ POST   /projects
   â”œâ”€â”€ GET    /projects/{id}
   â”œâ”€â”€ PUT    /projects/{id}
   â””â”€â”€ DELETE /projects/{id}
-  â”‚
+  │
   â–¼
 AWS Lambda Functions
-  â”‚
+  │
   â–¼
 DynamoDB
-  â”‚
+  │
   â–¼
 CloudWatch Logs & Monitoring
 ```
@@ -105,7 +105,7 @@ All compute is fully event-driven.
 | Monitoring        | CloudWatch                                                                   |
 | Alerting          | SNS                                                                          |
 | Local Development | LocalStack                                                                   |
-| CI/CD             | [GitHub Actions](https://github.com/features/actions?utm_source=chatgpt.com) |
+| CI/CD             | [GitHub Actions](https://github.com/features/actions?) |
 | Testing           | Pytest + Moto                                                                |
 
 ---
@@ -166,40 +166,40 @@ Includes:
 
 ```bash id="xtd40x"
 cloudops-portfolio-api/
-â”‚
+│
 â”œâ”€â”€ .github/workflows/
-â”‚   â”œâ”€â”€ ci.yml
-â”‚   â””â”€â”€ deploy.yml
-â”‚
+│   â”œâ”€â”€ ci.yml
+│   â””â”€â”€ deploy.yml
+│
 â”œâ”€â”€ docs/
-â”‚   â”œâ”€â”€ api-spec.md
-â”‚   â”œâ”€â”€ cost-notes.md
-â”‚   â””â”€â”€ runbook.md
-â”‚
+│   â”œâ”€â”€ api-spec.md
+│   â”œâ”€â”€ cost-notes.md
+│   â””â”€â”€ runbook.md
+│
 â”œâ”€â”€ infra/
-â”‚   â”œâ”€â”€ modules/
-â”‚   â”‚   â”œâ”€â”€ apigateway/
-â”‚   â”‚   â”œâ”€â”€ dynamodb/
-â”‚   â”‚   â”œâ”€â”€ iam/
-â”‚   â”‚   â”œâ”€â”€ lambda/
-â”‚   â”‚   â””â”€â”€ monitoring/
-â”‚   â”‚
-â”‚   â””â”€â”€ envs/
-â”‚       â”œâ”€â”€ dev/
-â”‚       â””â”€â”€ prod/
-â”‚
+│   â”œâ”€â”€ modules/
+│   │   â”œâ”€â”€ apigateway/
+│   │   â”œâ”€â”€ dynamodb/
+│   │   â”œâ”€â”€ iam/
+│   │   â”œâ”€â”€ lambda/
+│   │   â””â”€â”€ monitoring/
+│   │
+│   â””â”€â”€ envs/
+│       â”œâ”€â”€ dev/
+│       â””â”€â”€ prod/
+│
 â”œâ”€â”€ src/
-â”‚   â”œâ”€â”€ handlers/
-â”‚   â””â”€â”€ utils/
-â”‚
+│   â”œâ”€â”€ handlers/
+│   â””â”€â”€ utils/
+│
 â”œâ”€â”€ tests/
-â”‚
+│
 â””â”€â”€ README.md
 ```
 
 ---
 
-# ðŸš€ API Endpoints
+# 🚀 API Endpoints
 
 | Method | Endpoint         | Description    |
 | ------ | ---------------- | -------------- |
@@ -226,7 +226,7 @@ cloudops-portfolio-api/
 
 ---
 
-# ðŸ§ª Example Request
+# 🧪 Example Request
 
 ## Create Project
 
@@ -344,7 +344,7 @@ Stages:
 
 ---
 
-# ðŸ— Terraform Infrastructure
+# 🏗 Terraform Infrastructure
 
 Infrastructure is modularized into reusable components.
 
@@ -432,13 +432,17 @@ Designed for AWS Free Tier usage.
 | DynamoDB    | 25 GB storage     |
 | CloudWatch  | 5 GB logs         |
 
-Expected portfolio cost:`r`n`r`nFor local development with LocalStack: **Expected portfolio traffic cost:
+Expected portfolio cost:
 
-# **$0/month**/month**.`r`n`r`nAWS usage is dependent on actual request volume and applicable AWS pricing/free-tier eligibility.
+For local development with LocalStack: **Expected portfolio traffic cost:
+
+# **$0/month**/month**.
+
+AWS usage is dependent on actual request volume and applicable AWS pricing/free-tier eligibility.
 
 ---
 
-# ðŸ§ª Testing
+# 🧪 Testing
 
 The project includes comprehensive automated testing.
 
@@ -454,7 +458,7 @@ Total tests:
 
 ### 34 unit tests
 
-Uses [Moto](https://github.com/getmoto/moto?utm_source=chatgpt.com) to mock AWS services locally.
+Uses [Moto](https://github.com/getmoto/moto?) to mock AWS services locally.
 
 No AWS account required.
 
@@ -508,13 +512,13 @@ This is the mindset expected from modern **Cloud Engineers**, **DevOps Engineers
 
 ---
 
-# ðŸ¤ Contributing
+# 🤝 Contributing
 
 Contributions, issues, and pull requests are welcome.
 
 ---
 
-# ðŸ‘¨â€ðŸ’» Author
+# 👨‍💻 Author
 
 ## Franklin Chinonso Osuji
 
@@ -522,8 +526,8 @@ Cloud & DevOps Engineer
 
 AWS | Terraform | Serverless | CI/CD | DevOps | Platform Engineering
 
-* [GitHub Profile](https://github.com/franklinosuji2-afk?utm_source=chatgpt.com)
-* [LinkedIn Profile](https://www.linkedin.com/in/franklin-osuji-a96003321/?utm_source=chatgpt.com)
+* [GitHub Profile](https://github.com/franklinosuji2-afk?)
+* [LinkedIn Profile](https://www.linkedin.com/in/franklin-osuji-a96003321/?)
 
 > Building scalable cloud systems through automation, observability, and infrastructure excellence.
 
