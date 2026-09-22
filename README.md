@@ -1,538 +1,96 @@
-CloudOps Portfolio API
+# CloudOps Portfolio API
 
-> **A production-style serverless REST API built on AWS using Infrastructure as Code.**
+CloudOps Portfolio API is a Python API project demonstrating cloud-oriented application development, automated testing, infrastructure as code, and local cloud simulation.
 
-CloudOps Portfolio API is a fully serverless CRUD API designed to demonstrate real-world **Cloud Engineering**, **DevOps automation**, and **AWS infrastructure design**.
-
-The platform manages a collection of portfolio projects through a scalable event-driven architecture powered by:
-
-* Amazon Web Services Lambda
-* Amazon Web Services API Gateway
-* Amazon Web Services DynamoDB
-* Terraform
-* LocalStack
-
-The entire stack can run locally using LocalStack, enabling realistic AWS development without incurring cloud costs.
-
----
-
-# 🚀 Project Overview
-
-Modern cloud-native APIs should be:
-
-* scalable
-* cost-efficient
-* highly available
-* infrastructure-as-code driven
-* observable
-* easy to automate
-
-CloudOps Portfolio API demonstrates exactly that.
-
-Rather than relying on traditional servers or container clusters, this project uses a **serverless architecture** where compute is triggered only when requests arrive.
-
-That means:
-
-✅ No always-on servers
-✅ No load balancers
-✅ No NAT gateways
-✅ No VPC management
-✅ Near-zero baseline cost
-
----
-
-# 🎯 What This Project Demonstrates
-
-This repository showcases practical experience in:
-
-✅ Serverless architecture design
-✅ Infrastructure as Code (IaC)
-✅ AWS resource provisioning with Terraform
-✅ CI/CD pipeline automation
-✅ Monitoring & alerting
-✅ REST API design
-✅ Automated testing
-✅ Cost-aware cloud architecture
-
----
-
-# 🏗 Architecture
-
-```text id="rch6i0"
-Client
-  │
-  â–¼
-API Gateway (HTTP API)
-  │
-   GET    /projects
-   POST   /projects
-   GET    /projects/{id}
-   PUT    /projects/{id}
-   DELETE /projects/{id}
-  │
-  â–¼
-AWS Lambda Functions
-  │
-  â–¼
-DynamoDB
-  │
-  â–¼
-CloudWatch Logs & Monitoring
-```
-
----
-
-## Request Flow
-
-1. Client sends HTTP request
-2. API Gateway routes request
-3. Lambda handler executes business logic
-4. DynamoDB stores or retrieves data
-5. CloudWatch captures logs and metrics
-
-All compute is fully event-driven.
-
----
-
-# âš™ï¸ Technology Stack
-
-| Layer             | Technology                                                                   |
-| ----------------- | ---------------------------------------------------------------------------- |
-| IaC               | Terraform                                                                    |
-| Compute           | Amazon Web Services Lambda (Python 3.12)                                     |
-| API               | Amazon Web Services API Gateway v2                                           |
-| Database          | Amazon Web Services DynamoDB                                                 |
-| Monitoring        | CloudWatch                                                                   |
-| Alerting          | SNS                                                                          |
-| Local Development | LocalStack                                                                   |
-| CI/CD             | [GitHub Actions](https://github.com/features/actions?) |
-| Testing           | Pytest + Moto                                                                |
-
----
-
-# âœ¨ Features
-
----
-
-## RESTful CRUD API
-
-Supports complete project lifecycle management.
-
-Endpoints:
-
-* Create project
-* List projects
-* Get project
-* Update project
-* Delete project
-
----
-
-## Serverless Infrastructure
-
-Infrastructure is fully provisioned with Terraform.
-
-Benefits:
-
-* reproducible environments
-* version-controlled infrastructure
-* easy rollback
-* scalable provisioning
-
----
-
-## Local AWS Simulation
-
-Using LocalStack allows:
-
-* local development
-* faster iteration
-* zero AWS cost during testing
-
----
-
-## Monitoring & Alerting
-
-Includes:
-
-* structured application logs
-* CloudWatch metrics
-* error alarms
-* SNS notifications
-
----
-
-#  Repository Structure
-
-```bash id="xtd40x"
+Technology Stack
+Python
+FastAPI
+Pytest
+Flake8
+Terraform
+AWS infrastructure patterns
+LocalStack for local AWS development
+GitHub Actions
+Project Structure
 cloudops-portfolio-api/
-│
- .github/workflows/
-│    ci.yml
-│    ci.yml
-│
- docs/
-│    api-spec.md
-│    cost-notes.md
-│    runbook.md
-│
- infra/
-│    modules/
-│   │    apigateway/
-│   │    dynamodb/
-│   │    iam/
-│   │    lambda/
-│   │    monitoring/
-│   │
-│    envs/
-│        dev/
-│        prod/
-│
- src/
-│    handlers/
-│    utils/
-│
- tests/
-│
- README.md
-```
+|-- app/
+|-- tests/
+|-- infra/
+|   `-- envs/
+|       `-- dev/
+|-- .github/
+|   `-- workflows/
+|       `-- ci.yml
+|-- requirements.txt
+`-- README.md
+API
 
----
+The application provides CRUD operations for portfolio project resources.
 
-# 🚀 API Endpoints
+The test suite covers:
 
-| Method | Endpoint         | Description    |
-| ------ | ---------------- | -------------- |
-| GET    | `/projects`      | List projects  |
-| POST   | `/projects`      | Create project |
-| GET    | `/projects/{id}` | Get project    |
-| PUT    | `/projects/{id}` | Update project |
-| DELETE | `/projects/{id}` | Delete project |
+Create project
+Read project
+List projects
+Update project
+Delete project
+Request validation
+Testing
 
----
+Install dependencies:
 
-#  Project Schema
-
-```json
-{
-  "id": "uuid-auto-generated",
-  "name": "string",
-  "description": "string",
-  "status": "active | archived | completed | paused",
-  "created_at": "ISO 8601 timestamp",
-  "updated_at": "ISO 8601 timestamp"
-}
-```
-
----
-
-# 🧪 Example Request
-
-## Create Project
-
-```json
-POST /projects
-{
-  "name": "Platform Modernization",
-  "description": "Migrate services to serverless",
-  "status": "active"
-}
-```
-
-Response:
-
-```json
-{
-  "id": "92083e48-eb3f-4843-9081-207645e9532b",
-  "name": "Platform Modernization",
-  "status": "active"
-}
-```
-
----
-
-#  Local Development
-
----
-
-## Prerequisites
-
-Install:
-
-* Python 3.12+
-* Terraform 1.6+
-* Docker
-* LocalStack
-
----
-
-## Clone Repository
-
-```bash id="f9z9z1"
-git clone https://github.com/franklinosuji2-afk/cloudops-portfolio-api.git
-cd cloudops-portfolio-api
-```
-
----
-
-## Install Dependencies
-
-```bash id="1iv16m"
 pip install -r requirements.txt
-```
+pip install pytest flake8
 
----
+Run linting:
 
-## Run Tests
+python -m flake8 app tests
 
-```bash id="y6knzs"
-pytest tests/
-```
+Run tests:
 
----
+python -m pytest tests/
 
-## Start LocalStack
+The project currently contains 34 automated tests.
 
-```bash id="b2t05m"
-localstack start -d
-```
+Terraform
 
----
+Terraform infrastructure is located under:
 
-## Deploy Infrastructure
+infra/envs/dev/
 
-```bash id="0pfygq"
-cd infra/envs/dev
-terraform init
-terraform apply
-```
+Initialize Terraform without a remote backend:
 
----
+terraform init -backend=false
 
-#  CI/CD Pipeline
+Validate the configuration:
 
-Two workflows automate delivery.
+terraform validate
+Local AWS Development
 
----
+LocalStack can be used for AWS-compatible local development and testing without creating paid AWS resources.
 
-## CI Pipeline (`ci.yml`)
+CI
 
-Runs on push and pull requests.
+The repository uses one GitHub Actions workflow:
 
-Stages:
+.github/workflows/ci.yml
 
-* Python dependency install
-* Lint checks
-* Unit tests
-* Coverage checks
-* Terraform formatting
-* Terraform validation
+The CI pipeline performs:
 
----
+Python dependency installation
+Flake8 validation
+Pytest execution
+Terraform initialization
+Terraform validation
+Cost
 
-## Deployment Pipeline (`ci.yml`)
+The project is designed to support local development. Running the application and Terraform validation locally does not require paid AWS infrastructure.
 
-Runs on merge to main.
+Author
 
-Stages:
+Franklin Osuji
 
-* Build Lambda package
-* Authenticate to AWS
-* Terraform plan
-* Terraform apply
-* Publish API outputs
+Cloud Infrastructure and DevOps Engineer
 
----
-
-# 🏗 Terraform Infrastructure
-
-Infrastructure is modularized into reusable components.
-
-| Module       | Purpose               |
-| ------------ | --------------------- |
-| `dynamodb`   | Data persistence      |
-| `iam`        | Least-privilege roles |
-| `lambda`     | Compute layer         |
-| `apigateway` | API routing           |
-| `monitoring` | Metrics & alarms      |
-
----
-
-#  Monitoring & Observability
-
-CloudWatch monitors:
-
-* Lambda errors
-* API failures
-* execution latency
-* request volume
-
-Example log query:
-
-```sql
-fields @timestamp, level, message
-| filter level = "ERROR"
-| sort @timestamp desc
-| limit 50
-```
-
-Alerts trigger when:
-
-* Lambda errors exceed threshold
-* API 5xx responses increase
-
----
-
-#  Security
-
-Security best practices include:
-
----
-
-## Least Privilege IAM
-
-Lambda only receives required DynamoDB permissions.
-
-No wildcard permissions.
-
----
-
-## Input Validation
-
-Every handler validates request payloads before database writes.
-
----
-
-## Secure Credentials
-
-* No hardcoded AWS credentials
-* LocalStack uses dummy credentials
-* Production uses secure AWS authentication
-
----
-
-## Cost-Aware Design
-
-No VPC means avoiding:
-
-* NAT Gateway charges
-* subnet complexity
-* extra network overhead
-
----
-
-#  Cost Analysis
-
-Designed for AWS Free Tier usage.
-
-| Service     | Free Tier         |
-| ----------- | ----------------- |
-| Lambda      | 1M requests/month |
-| API Gateway | 1M calls/month    |
-| DynamoDB    | 25 GB storage     |
-| CloudWatch  | 5 GB logs         |
-
-Expected portfolio cost:
-
-For local development with LocalStack: **Expected portfolio traffic cost:
-
-# **$0/month**/month**.
-
-AWS usage is dependent on actual request volume and applicable AWS pricing/free-tier eligibility.
-
----
-
-# 🧪 Testing
-
-The project includes comprehensive automated testing.
-
-Coverage includes:
-
-* handler behavior
-* validation logic
-* CRUD operations
-* edge cases
-* error responses
-
-Total tests:
-
-### 34 unit tests
-
-Uses [Moto](https://github.com/getmoto/moto?) to mock AWS services locally.
-
-No AWS account required.
-
----
-
-#  Documentation
-
-Additional docs included:
-
-* API specification
-* Cost breakdown
-* Operations runbook
-
-Located in:
-
-```text id="pnl8hn"
-docs/
-```
-
----
-
-#  Future Improvements
-
-Planned enhancements:
-
-* Amazon Web Services Cognito authentication
-* Pagination support
-* Secondary indexes
-* X-Ray tracing
-* Remote Terraform state
-* Staging environment
-* Blue/green deployments
-
----
-
-#  Why This Project Matters
-
-Many portfolios show cloud deployment.
-
-Few demonstrate **production-grade cloud operations**.
-
-CloudOps Portfolio API showcases the engineering mindset needed to operate real AWS workloads:
-
-* automation-first
-* cost-aware architecture
-* secure infrastructure
-* observable systems
-* scalable serverless design
-
-This is the mindset expected from modern **Cloud Engineers**, **DevOps Engineers**, and **Platform Engineers**.
-
----
-
-# 🤝 Contributing
-
-Contributions, issues, and pull requests are welcome.
-
----
-
-# 👨‍💻 Author
-
-## Franklin Chinonso Osuji
-
-Cloud & DevOps Engineer
-
-AWS | Terraform | Serverless | CI/CD | DevOps | Platform Engineering
-
-* [GitHub Profile](https://github.com/franklinosuji2-afk?)
-* [LinkedIn Profile](https://www.linkedin.com/in/franklin-osuji-a96003321/?)
-
-> Building scalable cloud systems through automation, observability, and infrastructure excellence.
-
----
-
-#  License
-
-Licensed under the **MIT License**
+GitHub: https://github.com/franklinosuji2-afk
+Portfolio: https://fc-dev.netlify.app/
